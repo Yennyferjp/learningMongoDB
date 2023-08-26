@@ -1,0 +1,12 @@
+use("Platzi2")
+
+db.Products.updateOne(
+    // query
+    { _id: 4 },
+    // change=> operators
+    {
+        $inc: { //Incrementa el valor de un atributo numérico en una cantidad específica.
+            price: 1
+        }
+    }
+)

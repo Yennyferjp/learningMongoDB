@@ -1,0 +1,12 @@
+use("Platzi2")
+
+db.Products.updateOne(
+    { _id: 4 },
+    {
+        $set: { //Asigna un valor específico a un atributo.
+            name: "Change name",
+            price: 235655555,
+            tags: ['A', 'B', 'C', 'D']
+        }
+    }
+)

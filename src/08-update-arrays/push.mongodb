@@ -1,0 +1,10 @@
+use("Platzi2")
+
+db.inventory.updateOne(
+    { _id: 4 },
+    {
+        $push: {
+            tags: "dance"
+        }
+    }
+)

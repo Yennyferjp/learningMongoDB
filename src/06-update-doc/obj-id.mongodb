@@ -1,0 +1,15 @@
+use("Platzi2")
+
+db.Products.updateOne(
+    // query
+    {
+        _id:
+            ObjectId("64e930954a8553c5231a42aa")
+    },
+    // change=> operators
+    {
+        $inc: {
+            price: 1
+        }
+    }
+)

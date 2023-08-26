@@ -1,0 +1,3 @@
+use("Platzi2")
+
+db.iot.drop()

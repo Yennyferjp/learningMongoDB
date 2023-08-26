@@ -1,0 +1,22 @@
+use("Platzi2")
+
+//** Quita los elementos de los arrays */
+// db.inventory.updateMany(
+//     {  }, //Cuando es vacio la query, es porque se trata de todos
+//     {
+//         $pull: {
+//             tags: "book"
+//         }
+//     }
+// )
+
+db.inventory.updateMany(
+    {  }, //Cuando es vacio la query, es porque se trata de todos
+    {
+        $pull: {
+            tags: {
+                $in: ["appliance", "school"] // con in podemos elimianr vario elementos dentro de un array
+            }
+        }
+    }
+)
