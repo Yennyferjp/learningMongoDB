@@ -1,0 +1,10 @@
+use("Platzi2")
+
+db.iot.updateMany(
+    //query
+    { sensor: "A002"},
+    { 
+        //update: elimina todos los readings mayor o igual a 3 con pull
+        $pull: { readings: { $gte: 3} }
+    }
+)

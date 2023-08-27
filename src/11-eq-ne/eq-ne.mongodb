@@ -1,0 +1,22 @@
+use("Platzi2")
+
+// usando equal implicitamente
+// db.inventory.find({ qty: 20})
+
+// usando equal explicitamente
+// db.inventory.find({ qty: { $eq: 20 } })
+
+//CONSULTA EN UN SUBDOCUMENTO:
+
+// usando find en objetos anindados
+//NOTA: siempre que esté la notación . (punto), la clave debe ir en "" (comillas)
+// db.inventory.find({ "item.code": "123"})
+
+// db.inventory.find({ "item.name": "ab"})
+
+//FORMA EXPLICITA:
+
+db.inventory.find({ "item.name": { $eq: "ab"} })
+
+//Usando No Equal
+db.inventory.find({ qty: { $ne: 20 } })

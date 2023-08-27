@@ -15,7 +15,7 @@ db.inventory.updateMany(
     {
         $pull: {
             tags: {
-                $in: ["appliance", "school"] // con in podemos elimianr vario elementos dentro de un array
+                $in: ["appliance", "school"] // con in podemos elimianr varios elementos dentro de un array
             }
         }
     }

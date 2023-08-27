@@ -1,0 +1,2 @@
+use("Platzi2")
+db.inventory.find()

@@ -1,0 +1,21 @@
+use("Platzi2")
+
+// db.inventory.find({ "item.description": "Single line description." })
+
+// /line/ => nos devuelve los doc que tengan la palabra line, exactamente como esta escrita.
+// db.inventory.find({ "item.description": {$regex: /line/} })
+
+// /line/i => nos devuelve los doc que tengan la palabra line, ignorando minus-mayus.
+// db.inventory.find({ "item.description": {$regex: /LINE/i} })
+
+// /line$/ => nos devuelve los doc que terminen con la palabra line.
+// db.inventory.find({ "item.description": {$regex: /line$/} })
+
+// /^Single/ => nos devuelve los doc que empiecen con la palabra Single.
+// db.inventory.find({ "item.description": {$regex: /^Single/} })
+
+
+// /^S/m => (m= multiline) nos devuelve los doc que empiecen por S, ignorando los saltos de linea. Ej:
+//( Single line
+// Second line ).
+db.inventory.find({ "item.description": {$regex: /^s/im } })

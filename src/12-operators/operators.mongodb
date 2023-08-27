@@ -1,0 +1,34 @@
+use("Platzi2")
+
+// // Using $gt (>: Mayor que) 
+// db.inventory.find({ qty: { $gt: 20 }} )
+
+// // Using $gte (>= Mayor Igual)
+// db.inventory.find({ qty: { $gte: 25 }} )
+
+// Using $lt (<: Menor que) 
+// db.inventory.find({ qty: { $lt: 25 }} )
+
+// Using $lte (<= Menor Igual)
+// db.inventory.find({ qty: { $lte: 25 }} )
+
+// Join - Using $gte (>= Mayor Igual) , Using $lt (<: Menor que)
+// db.inventory.find({ qty: { $gte: 25, $lt: 35 }} )
+
+//New Join - Segun la condicional no hay ningun sub documento que tenga qty:20 y 25
+// db.inventory.find({
+//     "item.name": "ab",
+//     qty: { $gte: 20, $lte: 25 }
+// })
+
+//New Join - Segun la condicional solo aparecerá un dato, porque solamente se encuentra en el code 123
+// db.inventory.find({
+//     "item.code": "123",
+//     qty: { $gte: 20, $lte: 25 }
+// })
+
+// Quiero que no busque mi sub documento 123 y si los demas que tengan qty Mayor Igual 20 y Menor Igual 25
+db.inventory.find({
+    "item.code": { $ne: "123" },
+    qty: { $gte: 20, $lte: 25 }
+})

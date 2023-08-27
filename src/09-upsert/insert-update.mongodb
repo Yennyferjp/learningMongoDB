@@ -1,3 +1,44 @@
 use("Platzi2")
 
-db.iot.insertOne()
+// db.iot.insertOne({
+//     "_id": 5,
+//     "sensor": "A001",
+//     "date": "2022-01-03",
+//     "readings": [
+//         1,
+//         2,
+//         3,
+//         4
+//     ]
+// })
+
+// db.iot.updateOne({
+//     "_id": 5,
+//     "sensor": "A001",
+//     "date": "2022-01-03",
+// }, {
+//     $push: {
+//         readings: 1235
+//     }
+// })
+
+// db.iot.updateOne({
+//     "_id": 5,
+//     "sensor": "A001",
+//     "date": "2022-01-03",
+// }, {
+//     $pop: {
+//         readings: 1
+//     }
+// })
+
+db.iot.updateOne({
+    "_id": 5,
+    "sensor": "A001",
+    "date": "2022-01-03",
+}, {
+    $push: {
+        readings: 5
+    }
+})
+

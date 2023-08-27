@@ -1,0 +1,14 @@
+use("Platzi2")
+
+// eliminar solo uno
+// db.Products.deleteOne({
+//     _id: 1
+// })
+
+// // eliminar todos los que coincidan con la consulta
+// db.Products.deleteMany({
+//     price: 100
+// })
+
+// eliminar todos los elementos de un documento
+db.Products.drop()
