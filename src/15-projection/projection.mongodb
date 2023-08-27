@@ -1,0 +1,15 @@
+use("sample_training")
+
+// db.trips.find(
+//     //query
+// { tripduration: { $gte: 500 } }, 
+// //projecion
+// { tripduration: 1, usertype: 1, _id: 0}
+
+// )
+
+//Aqui aplicamos projection de forma explicita
+// db.trips.find({tripduration:{$lte:500},usertype:"Subscriber"}).projection({"tripduration":1,"end station name":1})
+
+//Aqui ademas agregue un sort que seria como un Order By
+db.trips.find({tripduration:{$lte:500},usertype:"Subscriber"}).projection({"tripduration":1,"end station name":1}).sort({tripduration:1})

@@ -1,0 +1,19 @@
+use("sample_training")
+
+//sort=> organiza los documentos ASC o DESC
+//1 => 0 a 10; A a Z
+//-1 => 10 a 0; Z a A
+
+db.zips.find(
+    {
+        pop:
+        {
+            $gte: 100
+        }
+
+    }
+).sort(
+    {
+        pop: 1
+    }
+).limit(2) // .limit() => Limita la cantidad de doc que queremos traer, ej: .limit(3) trae 3 docs.
